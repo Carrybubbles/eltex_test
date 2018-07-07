@@ -2,6 +2,7 @@ package ru.fedin.weather.controllers;
 
 import com.mashape.unirest.http.exceptions.UnirestException;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.ProgressBar;
 import org.apache.log4j.Logger;
 import ru.fedin.visitor.views.VisitorUI;
 import ru.fedin.weather.models.WeatherModel;
@@ -40,6 +41,7 @@ public class WeatherController {
     }
 
     private void updateWeather(){
+
         log.info("Click on weather update button");
         Map<String,Integer> temperature = weatherModel.getWeather(weatherUI.getComboxBoxValue());
         weatherUI.updateTodayTempLabel( temperature != null ? String.format("Темпертаруа текущая: %s C",temperature.get("todayTemp")) : "Темпертаруа текущая: error");

@@ -25,6 +25,8 @@ public class WeatherUI extends CustomComponent {
 
     public WeatherUI(WeatherModel weatherModel) {
         this.weatherModel = weatherModel;
+        ProgressBar bar = new ProgressBar();
+        bar.setIndeterminate(true);
 
         VerticalLayout vl = new VerticalLayout();
 
@@ -40,8 +42,11 @@ public class WeatherUI extends CustomComponent {
 
     private void initLabels(){
         labelWeather = new Label("Погода");
+        labelWeather.setStyleName(ValoTheme.LABEL_HUGE);
         labelTodayTemp = new Label("Темпертаруа текущая: %s C");
+        labelTodayTemp.setStyleName(ValoTheme.LABEL_LARGE);
         labelTomorrowTemp = new Label("Температура на завтра: %s C");
+        labelTomorrowTemp.setStyleName(ValoTheme.LABEL_LARGE);
 
     }
 
@@ -50,7 +55,7 @@ public class WeatherUI extends CustomComponent {
     }
 
     private void initComboBoxes(){
-        final List<String> cities = Arrays.asList("Novosibirsk", "Moscow", "St. Petersburg");
+        final List<String> cities = Arrays.asList("Новосибирск", "Москва", "Санкт-Петербург");
         select = new ComboBox<>("Выберите город");
         select.setItems(cities);
         select.setSelectedItem(cities.get(0));

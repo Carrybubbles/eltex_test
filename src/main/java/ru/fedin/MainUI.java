@@ -23,7 +23,6 @@ import java.io.IOException;
 
 @Theme("mytheme")
 public class MainUI extends UI {
-    private static final Logger log = Logger.getLogger(MainUI.class);
 
     private MoneyModel moneyModel;
     private MoneyUI moneyUI;
@@ -36,7 +35,7 @@ public class MainUI extends UI {
     private VisitorCounter visitorCounter;
     private VisitorUI visitorUI;
 
-    private  Label nameProject;
+    private Label nameProject;
     private Label ipAddress;
     private Label serverTime;
 
@@ -95,8 +94,11 @@ public class MainUI extends UI {
 
     private void initLables(String ip, String time){
        nameProject = new Label("Тестовое сетевое приложение");
+       nameProject.setStyleName(ValoTheme.LABEL_H1);
        ipAddress = new Label("Ваш IP " + ip);
+       ipAddress.setStyleName(ValoTheme.LABEL_HUGE);
        serverTime = new Label("Информация по состоянию на " + time);
+       serverTime.setStyleName(ValoTheme.LABEL_HUGE);
     }
 
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)

@@ -34,13 +34,14 @@
 @mixin mytheme {
   @include valo;
 
-  // Insert your own theme rules here
-  .v-caption-mystyle {
-    .v-captiontext {
-      font-size: 13px;
-      font-weight: bold;
-      color: red;
-    }
+  .v-label {
+    background: #6eff1a;
+    color: white;
+    font-size: 24pt;
+    line-height: 24pt;
+    padding: 5px;
   }
+
+  // Insert your own theme rules here
 
 }

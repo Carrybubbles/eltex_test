@@ -15050,8 +15050,10 @@ div.v-layout.v-horizontal.v-widget {
 	overflow: hidden;
 }
 
-.mytheme .v-caption-mystyle .v-captiontext {
-	font-size: 13px;
-	font-weight: bold;
-	color: red;
+.mytheme .v-label {
+	background: #6eff1a;
+	color: white;
+	font-size: 24pt;
+	line-height: 24pt;
+	padding: 5px;
 }
