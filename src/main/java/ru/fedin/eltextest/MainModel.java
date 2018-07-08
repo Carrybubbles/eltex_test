@@ -12,8 +12,7 @@ public class MainModel {
 
     public String getIp(){
         try {
-            InetAddress ip = InetAddress.getLocalHost();
-            return ip.getHostAddress();
+            return InetAddress.getLocalHost().getHostAddress();
         } catch (UnknownHostException e) {
             log.error(e);
         }
