@@ -8,8 +8,10 @@ OS X & Linux:
 
 1. Configure MongoDB  
 Install mongoDB database  
-Set database, collections and documents
-  ``` use mydb
+Set database, collections and documents  
+
+  ``` 
+      use mydb
       db.createCollection("visitors") 
       db.visitors.insert({"title" : "visitors_counter", "counter" : NumberInt(0)})
   ```  
