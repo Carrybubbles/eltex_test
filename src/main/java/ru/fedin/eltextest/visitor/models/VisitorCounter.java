@@ -12,11 +12,11 @@ import java.io.InputStream;
 import java.util.Properties;
 
 import static com.mongodb.client.model.Filters.eq;
+import static com.mongodb.client.model.Filters.in;
 
 public class VisitorCounter {
     private static final Logger log = Logger.getLogger(VisitorCounter.class);
 
-    private MongoClient mongoClient;
     private MongoCollection<Document> collection;
 
     public VisitorCounter(){
@@ -24,11 +24,11 @@ public class VisitorCounter {
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream("config.properties");
         try {
             prop.load(inputStream);
-            mongoClient = new MongoClient(prop.getProperty("db.host"), Integer.valueOf(prop.getProperty("db.port")));
+            MongoClient mongoClient = new MongoClient(prop.getProperty("db.host"), Integer.valueOf(prop.getProperty("db.port")));
             MongoDatabase db = mongoClient.getDatabase(prop.getProperty("db.name"));
             collection = db.getCollection(prop.getProperty("db.tablename"));
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error(e);
         }
 
     }
