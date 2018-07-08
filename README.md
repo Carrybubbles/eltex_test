@@ -1,8 +1,9 @@
 # Eltex Test
 
 Test task for Eltex company.
-
-## Installation
+## Prerequisites  
+Configure and Install [MongoDB](https://docs.mongodb.com/manual/installation), [Tomcat](http://tomcat.apache.org/) 
+## Installation  
 
 OS X & Linux:
 
@@ -37,9 +38,20 @@ We can run app in two ways.
   Type http://localhost:8090/ in browser  
 2. Tomcat  
    Place testEltex-1.0-SNAPSHOT.war in webapps Tomcat folder.  
-   Type http://localhost:8080/testEltex-1.0-SNAPSHOT  
-  
+   Type http://localhost:8080/testEltex-1.0-SNAPSHOT
+   
+## Built With  
+* [Maven](https://maven.apache.org/) - Dependency Management
+* [VAADIN](https://vaadin.com) - Components and tools for building web apps in Java
+## Authors
+
+* **Artem Fedin** - [Carrybubbles](https://github.com/Carrybubbles)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 ## Release History
 
 * 0.0.1
     * Work in progress
+    
