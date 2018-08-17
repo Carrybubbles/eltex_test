@@ -20,22 +20,6 @@ public class MoneyController {
         moneyUI.addUpdateButtonEvent((Button.ClickListener) event -> updateCurrency());
     }
 
-    public MoneyModel getMoneyModel() {
-        return moneyModel;
-    }
-
-    public void setMoneyModel(MoneyModel moneyModel) {
-        this.moneyModel = moneyModel;
-    }
-
-    public MoneyUI getMoneyUI() {
-        return moneyUI;
-    }
-
-    public void setMoneyUI(MoneyUI moneyUI) {
-        this.moneyUI = moneyUI;
-    }
-
     private void updateCurrency(){
         log.info("Click on update currency button");
         Map<String,Double> currencies = moneyModel.getAllCurrency();

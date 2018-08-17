@@ -20,7 +20,6 @@ public final class MoneyModel {
 
     private HttpResponse<String> doMoneyRequest(List<String> currency) throws UnirestException {
         String reqCurrencies = currency.stream().collect(Collectors.joining(","));
-        HTTPResponser responser = new HTTPResponser();
         Map<String, String> headers = Collections.unmodifiableMap(Stream.of(
                 new AbstractMap.SimpleEntry<>("accept", "application/json"))
                 .collect(Collectors.toMap(AbstractMap.SimpleEntry::getKey, AbstractMap.SimpleEntry::getValue)));
@@ -29,7 +28,7 @@ public final class MoneyModel {
                 new AbstractMap.SimpleEntry<>("compact", "y"))
                 .collect(Collectors.toMap(AbstractMap.SimpleEntry::getKey, AbstractMap.SimpleEntry::getValue)));
 
-        return responser.doRequest(moneyApiURL,headers,params);
+        return HTTPResponser.doRequest(moneyApiURL,headers,params);
     }
     private Map<String, Double> parseCurrencies(String response){
         JsonParser parser = new JsonParser();

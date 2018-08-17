@@ -10,7 +10,7 @@ import java.util.Map;
 public class HTTPResponser {
     private static final Logger log = Logger.getLogger(HTTPResponser.class);
 
-    public HttpResponse<String> doRequest(String url, Map<String,String> headers, Map<String,Object> parametrs) throws UnirestException {
+    public static HttpResponse<String> doRequest(String url, Map<String,String> headers, Map<String,Object> parametrs) throws UnirestException {
         HttpResponse<String> jsonResponse = Unirest.get(url)
                 .headers(headers)
                 .queryString(parametrs)

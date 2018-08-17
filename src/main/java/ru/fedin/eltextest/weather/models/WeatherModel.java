@@ -20,7 +20,6 @@ public final class WeatherModel {
     private static final String API_KEY = "97e5664bdf9e478a86d115938180507";
 
     private HttpResponse<String> doWeatherRequest(String city) throws UnirestException {
-        HTTPResponser responser = new HTTPResponser();
         Map<String, Object> params = Collections.unmodifiableMap(Stream.of(
                 new AbstractMap.SimpleEntry<>("q", city),
                 new AbstractMap.SimpleEntry<>("format", "json"),
@@ -28,7 +27,7 @@ public final class WeatherModel {
                 new AbstractMap.SimpleEntry<>("key", API_KEY))
                 .collect(Collectors.toMap(AbstractMap.SimpleEntry::getKey, AbstractMap.SimpleEntry::getValue)));
 
-        return responser.doRequest(WEATHER_API_URL,null,params);
+        return HTTPResponser.doRequest(WEATHER_API_URL,null,params);
     }
 
     private Map<String,Integer> parseWeatherResponse(String response) throws WeatherResponseException {
